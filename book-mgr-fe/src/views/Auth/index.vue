@@ -1,3 +1,5 @@
+import { login } from '@/service/auth';
+
 <template>
     <div class="auth">
         <div class="bg"></div>
@@ -7,17 +9,17 @@
         </div>
         <div class="form">
             <a-tabs>
-                <a-tab-pane key="1" tab="登录">
+                <a-tab-pane key="1" tab="登入">
                     <div class="item">
-                        <a-input size="large" placeholder="账户" >
-                            <template #prefix>
+                        <a-input size="large" placeholder="账户" v-model:value="loginForm.account">
+                            <template v-slot:prefix>
                             <UserOutlined />
                             </template>
                         </a-input>
                     </div>
                     <div class="item">
-                        <a-input size="large" placeholder="密码" >
-                            <template #prefix>
+                        <a-input size="large" placeholder="密码" v-model:value="loginForm.password">
+                            <template v-slot:prefix>
                             <LockOutlined />
                             </template>
                         </a-input>
@@ -26,31 +28,31 @@
                         <a href="">忘记密码</a>
                     </div>
                     <div class="item">
-                        <a-button size="large" type="primary">
-                            登录
+                        <a-button size="large" type="primary" @click="login">
+                            登入
                         </a-button>
                     </div>
                 </a-tab-pane>
                 <a-tab-pane key="2" tab="注册">
                     <div class="item">
                         <a-input size="large" placeholder="账户" v-model:value="regForm.account">
-                            <template #prefix>
+                            <template v-slot:prefix>
                             <UserOutlined />
                             </template>
                         </a-input>
                     </div>
                     <div class="item">
                         <a-input size="large" placeholder="密码" v-model:value="regForm.password">
-                            <template #prefix>
+                            <template v-slot:prefix>
                             <LockOutlined />
                             </template>
                         </a-input>
                     </div>
                     <div class="item">
-                        <a-input size="large" placeholder="邀请码" >
-                            <template #prefix>
+                        <a-input size="large" placeholder="邀请码" v-model:value="regForm.inviteCode">
+                            <template v-slot:prefix>
                                 <MailOutlined />
-                            </template>                           
+                            </template>
                         </a-input>
                     </div>
                     <div class="item">
@@ -66,11 +68,7 @@
 
 <script src="./index.js">
 
-
-
-
 </script>
-
 
 <style lang="scss" scoped>
     @import './index.scss';

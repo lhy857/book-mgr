@@ -35,7 +35,7 @@ connect().then(() => {
 // });
 
 // const bookRouter = new Router({
-//     prefix: '/book'                                     
+//     prefix: '/book'
 // });
 
 // app.use(authRouter.routes());
@@ -56,7 +56,7 @@ connect().then(() => {
 // app.use((context) => {
 //     // const { request } = context;
 //     //对 request 进行重命名
-//     const { request:req } = context; 
+//     const { request:req } = context;
 //     // 对象的解构
 //     // const request = context.request; == const { request } = context;
 //     const { url } = req;
