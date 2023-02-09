@@ -10,6 +10,7 @@ export default defineComponent({
       MailOutlined,
    },
    setup() {
+      //注册用的表单数据
       const regForm = reactive({
          account: '',
          password: '',
