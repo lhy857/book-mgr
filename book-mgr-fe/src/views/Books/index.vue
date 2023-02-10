@@ -8,12 +8,18 @@
         <div class="search">
           <a-input-search placeholder="根据书名搜索" enter-button />
         </div>
-        <a-button>添加一条</a-button>
+        <a-button @click="show = true">添加一条</a-button>
       </space-between>
       <a-divider />
-      <a-table :columns="columns" :data-source="dataSource">
+      <a-table :columns="columns" :data-source="list">
+        <template #publishDate="data">
+          {{ formatTimestamp(data.record.publishDate) }}
+        </template>
       </a-table>
     </a-card>
+    <add-one
+      v-model:show="show"
+    />
   </div>
 </template>
 
